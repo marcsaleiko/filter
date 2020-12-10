@@ -222,7 +222,6 @@ window.Filter = (function(){
     var r = true
     // the first "false" return value stops the evaluation
     var $this = $(this)
-    console.log('filter called do badges exist? %o', items.badges);
     if (items.badge)
     {
       var badgesCount = items.badge.length
@@ -239,7 +238,6 @@ window.Filter = (function(){
           badgesFilterString += badge.filterValue.lastValue
         }
       }
-      console.log(badgesFilterString);
       if (badgesFilterString !== '' && $this.filter(badgesFilterString).length === 0)
       {
         r = false
