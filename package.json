@@ -1,0 +1,24 @@
+{
+  "name": "@marcsaleiko/filter",
+  "version": "0.1.0",
+  "description": "",
+  "browser": "src/Filter.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcsaleiko/filter.git"
+  },
+  "dependencies": {
+    "jquery": "^3.5.1",
+    "isotope-layout": "^3.0.6",
+    "imagesloaded": "^4.1.4"
+  },
+  "author": "Marc Saleiko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/marcsaleiko/filter/issues"
+  },
+  "homepage": "https://github.com/marcsaleiko/filter#readme"
+}
