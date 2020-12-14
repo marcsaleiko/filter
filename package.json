@@ -1,7 +1,7 @@
 {
   "name": "@marcsaleiko/filter",
   "version": "0.1.1",
-  "description": "",
+  "description": "Filter library that uses Isotope and jQuery Plugins to filter elements",
   "browser": "src/Filter.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

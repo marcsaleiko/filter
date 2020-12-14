@@ -1,3 +1,8 @@
+/*!
+ * Filter v0.1.0
+ * Filter library that uses Isotope and jQuery Plugins to filter elements
+ * MIT License
+ */
 window.Filter = (function(){
 
   var _init = false;
