@@ -331,9 +331,16 @@ window.Filter = (function(){
     for(var i = 0; i < $filterActiveElements.length; i++ )
     {
       var $thisActiveElement = $( $filterActiveElements[i] );
+      // use id if you only have one id to add to the set of active filter elements
       if( $thisActiveElement.attr( 'data-id' ) )
       {
         filterActiveElementsIds.push( parseInt( $thisActiveElement.attr( 'data-id' ) ) );
+      }
+      // use ids if one filter element contains more than one map element entry
+      if( $thisActiveElement.attr( 'data-ids' ) ) {
+        $thisActiveElement.attr( 'data-ids' ).split(',').forEach(function(item){
+          filterActiveElementsIds.push( parseInt( item ) );
+        });
       }
     }
     // return the number of active elements
