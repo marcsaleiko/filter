@@ -66,6 +66,8 @@
         }
 
         Filter.update()
+        
+        e.preventDefault()
       }
     }
 
