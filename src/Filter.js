@@ -248,32 +248,6 @@ window.Filter = (function(){
         r = false
       }
     }
-    // if( items.checkbox ) {
-    //   var c = items.checkbox.length;
-    //   for( var i = 0; i < c; i++ ) {
-    //     var plainElement = items.checkbox[i];
-    //     if( typeof plainElement.sgfilter.lastValue !== 'undefined' && plainElement.sgfilter.lastValue !== '' ) {
-    //       if( $( this ).filter( plainElement.sgfilter.lastValue ).length === 0 ) {
-    //         r = false;
-    //         break;
-    //       }
-    //     }
-    //   }
-    // }
-    // if( r && items.slider )
-    // {
-    //   var c = items.slider.length;
-    //   for( var i = 0; i < c; i++ )
-    //   {
-    //     var plainElement = items.slider[i];
-    //     var thisValue = parseFloat( $this.data( plainElement.sgfilter.attribute ) );
-    //     if( evalSlider( plainElement, thisValue ) === false )
-    //     {
-    //       r = false;
-    //       break;
-    //     }
-    //   }
-    // }
     if( r && items.multiselect )
     {
       var c = items.multiselect.length;
@@ -292,17 +266,6 @@ window.Filter = (function(){
         }
       }
     }
-    // if( r && items.megaselect ) {
-    //   // combined selector is a huge selector that contains all
-    //   // selectors of all selected items separated by comma
-    //   // only OR connection until now
-    //   var selector = items.megaselect.getCombinedSelector();
-    //   if( selector !== '' ) {
-    //     if( $this.filter( selector ).length === 0 ) {
-    //       r = false;
-    //     }
-    //   }
-    // }
     if( r && items.search !== false &&
         $searchFields.length > 0 &&
         typeof settings.searchItemCallback === 'function'
@@ -331,16 +294,9 @@ window.Filter = (function(){
     for(var i = 0; i < $filterActiveElements.length; i++ )
     {
       var $thisActiveElement = $( $filterActiveElements[i] );
-      // use id if you only have one id to add to the set of active filter elements
       if( $thisActiveElement.attr( 'data-id' ) )
       {
         filterActiveElementsIds.push( parseInt( $thisActiveElement.attr( 'data-id' ) ) );
-      }
-      // use ids if one filter element contains more than one map element entry
-      if( $thisActiveElement.attr( 'data-ids' ) ) {
-        $thisActiveElement.attr( 'data-ids' ).split(',').forEach(function(item){
-          filterActiveElementsIds.push( parseInt( item ) );
-        });
       }
     }
     // return the number of active elements
