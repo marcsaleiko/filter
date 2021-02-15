@@ -76,7 +76,10 @@ window.Filter = (function(){
     multiselect: false,
     // false or '.selector',
     search: '.js-filter-search-field',
+    // use a jquery instance of FilterBagde
     badge: false,
+    // use a jquery instance of FilterCheckbox
+    checkbox: false,
   };
   var active = false;
 
@@ -245,6 +248,23 @@ window.Filter = (function(){
       }
       if (badgesFilterString !== '' && $this.filter(badgesFilterString).length === 0)
       {
+        r = false
+      }
+    }
+    if( r && items.checkbox ) {
+      var checkboxesCount = items.checkbox.length
+      var checkboxesFilterString = ''
+      for( var checkboxesIndex = 0; checkboxesIndex < checkboxesCount; checkboxesIndex++ ) {
+        var checkbox = items.checkbox[checkboxesIndex];
+        if( typeof checkbox.filterValue.lastValue !== 'undefined' && checkbox.filterValue.lastValue !== '' ) {
+          // @todo add "and" connection
+          if( checkboxesFilterString.length > 0) {
+            checkboxesFilterString += ', '
+          }
+          checkboxesFilterString += checkbox.filterValue.lastValue
+        }
+      }
+      if( checkboxesFilterString !== '' && $this.filter( checkboxesFilterString ).length === 0 ) {
         r = false
       }
     }
