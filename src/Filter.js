@@ -1,5 +1,5 @@
 /*!
- * Filter v0.4.0
+ * Filter v0.5.0
  * Filter library that uses Isotope and jQuery Plugins to filter elements
  * MIT License
  */
