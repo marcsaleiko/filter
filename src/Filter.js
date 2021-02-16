@@ -254,11 +254,17 @@ window.Filter = (function(){
     if( r && items.checkbox ) {
       var checkboxesCount = items.checkbox.length
       var checkboxesFilterString = ''
+
+      var checkboxOperator = 'or'
+      if( checkboxesCount > 0 ) {
+        checkboxOperator = items.checkbox[0].filterValue.operator
+      }
+
       for( var checkboxesIndex = 0; checkboxesIndex < checkboxesCount; checkboxesIndex++ ) {
         var checkbox = items.checkbox[checkboxesIndex];
         if( typeof checkbox.filterValue.lastValue !== 'undefined' && checkbox.filterValue.lastValue !== '' ) {
           // @todo add "and" connection
-          if( checkboxesFilterString.length > 0) {
+          if( checkboxesFilterString.length > 0 && checkboxOperator === 'or' ) {
             checkboxesFilterString += ', '
           }
           checkboxesFilterString += checkbox.filterValue.lastValue
